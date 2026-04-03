@@ -21,7 +21,7 @@ clean:
 	rm -rf  ./${OUTPUT}/*
 
 build:
-	CGO_ENABLED=${CGO_ENABLED} GOOS=windows GOARCH=${GOARCH} ${GOBUILD} -o ${OUTPUT}/${OUTPUT_NAME}.exe .
+	CGO_ENABLED=${CGO_ENABLED} CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=${GOARCH} ${GOBUILD} -o ${OUTPUT}/${OUTPUT_NAME}.exe .
 	chmod +x ./${OUTPUT}/${OUTPUT_NAME}.exe
 
 build-osx:
